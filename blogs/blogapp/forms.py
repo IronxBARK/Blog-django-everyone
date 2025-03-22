@@ -5,11 +5,10 @@ class EntryForm(forms.ModelForm):
     
     class Meta:
         model = BlogEntry
-        fields = ['title', 'particular', 'author']
+        fields = ['title', 'particular']
         widgets = {
              'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your name'}),
              'particular':forms.Textarea(attrs={'class':'form-control'}),
-             'author':forms.Select(attrs={'class':'form-control'})
         }
         
         
