@@ -11,7 +11,7 @@
     </header>
 
     <section class="detail-content">
-        <p>{{ one.particular }}</p>
+        <pre class="text-wrap">{{ one.particular|safe }}</pre>
     </section>
     <form action='{% url 'delete' one.slug %}' method='POST'>
         {% csrf_token %}
