@@ -13,7 +13,8 @@ class BlogEntry(models.Model):
     slug = models.SlugField(blank=True)
     
     class Meta:
-        verbose_name_plural = 'Blog Enteries'
+        verbose_name_plural = 'Blog Entries'
+        ordering = ['-date']  # Order by newest first
         
     def __str__(self):
         return self.title
@@ -26,4 +27,3 @@ class BlogEntry(models.Model):
         
     def get_absolute_url(self):
         return reverse("detail", kwargs={"slug": self.slug})
-    

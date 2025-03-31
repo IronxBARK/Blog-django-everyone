@@ -17,6 +17,7 @@ class EntryForm(forms.ModelForm):
         title = cleaned_data.get('title')
         particular = cleaned_data.get('particular')
         if len(title) < 3:
-            raise forms.ValidationError("Length of title cannot be less than 3")
+            raise forms.ValidationError("The title must be at least 3 characters long.")
         if len(particular) < 5:
-            raise forms.ValidationError("Should be more than 5")
+            raise forms.ValidationError("The content must be at least 5 characters long.")
+        return cleaned_data  # Ensure cleaned data is returned

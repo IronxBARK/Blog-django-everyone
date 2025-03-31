@@ -14,3 +14,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blogs.settings')
 
 application = get_wsgi_application()
+
+# Ensure the WSGI application is ready for production
+# Use a WSGI server like Gunicorn or uWSGI to serve this application in production
